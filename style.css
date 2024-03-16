@@ -1,0 +1,348 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Glitch+Pop&display=swap');
+
+:root {
+    --main-color: rgb(12,5,216);
+    --main-color-alpha: rgba(12, 5, 216, 0.87);
+    --second-color: rgb(255, 130, 46);
+    --third-color: rgb(46, 147, 255);
+    --links-color: rgb(216, 216, 216);
+    --title-font: "Rubik Glitch Pop", system-ui;
+}
+
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 10px;
+}
+
+body{
+    font-size: calc(14px + (18 - 14) * ((100vw - 300px) / (1400 - 300)));
+    text-align: center;
+   
+}
+
+/**My styles**/
+
+.d-flex{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.d-flex-column{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.no-scroll {
+    overflow: hidden;
+}
+
+/** grid con Flexbox **/
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+
+}
+
+.row>[class^="col"] {
+    padding: 1rem;
+}
+
+.col-1 {
+    width: 8.333333333333333%;
+}
+
+.col-2 {
+    width: 16.66666666666667%;
+}
+
+.col-3 {
+    width: 25%;
+}
+
+.col-4 {
+    width: 33.33333333333333%;
+}
+
+.col-5 {
+    width: 41.66666666666667%;
+}
+
+.col-6 {
+    width: 50%;
+}
+
+.col-7 {
+    width: 58.33333333333333%;
+}
+
+.col-8 {
+    width: 66.66666666666667%;
+}
+
+.col-9 {
+    width: 75%;
+}
+
+.col-10 {
+    width: 83.33333333333333%;
+}
+
+.col-11 {
+    width: 91.66666666666667%;
+}
+
+.col-12 {
+    width: 100%;
+}
+
+
+
+
+
+
+/** General styles**/
+
+/*!Header*/
+
+header{
+    position: sticky;
+    top: 0;
+    height: 6rem;
+    background: var(--third-color);
+    z-index: 999;
+}
+
+.img-brand {
+  filter: drop-shadow(1px 2px 1px rgba(0, 0, 0, 0.5));
+
+}
+
+.title{
+    font-family: var(--title-font);
+    color: var(--second-color);
+    text-shadow: 2px 2px 4px #000 ;
+}
+
+.menu-desktop{
+    display: none;
+}
+
+/*!Menu mobile*/
+
+.cta-menu-mobile{
+    position: fixed;
+     bottom: 4vh;
+     right: 4vw;
+     z-index: 998;
+     border: none;
+     background: transparent;
+}
+
+.menu-mobile {
+    position: fixed;
+    background:rgba(0, 0, 0, 0.756);
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    gap: 2rem;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(-100%);
+    transition: all 0.5s ease-out;
+    z-index: 997;
+}
+
+.menu-active{
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+}
+
+.menu-inactive{
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(-100);
+}
+
+.btn-img{
+  filter: drop-shadow(1px 1px 1px rgba(0, 0, 0, 0.5));
+  transition: transform 0.5s ease;
+
+}
+.rotate-img{
+    transform: rotate(-360deg); 
+}
+.rotate-img-reverse{
+    transform: rotate(360deg); 
+}
+
+.menu-mobile .nav-link{
+    font-size: xx-large;
+    color: var(--links-color);
+    transition: all 0.5s ease;
+}
+
+.menu-mobile .nav-link:hover{
+    transform: scale(1.1);
+    color: var(--second-color);
+}
+
+/*!Main*/
+main{
+    margin-top: 4rem;
+}
+section{
+    scroll-margin-top: 6rem;
+    margin-top: 1rem;
+}
+
+.ipt-search{
+    padding: 0.5rem;
+    border-radius: 15px;
+    border: 2px groove var(--main-color);
+}
+.btn-search{
+   background: transparent;
+   border: none;
+}
+
+  /*!Cards category*/
+
+  .card {
+    color: #fff;
+    width: 30rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow:
+    5.8px 1.4px 10.1px rgba(0, 0, 0, 0.018),
+    14px 3.3px 23.9px rgba(0, 0, 0, 0.03),
+    26.4px 6.3px 44.8px rgba(0, 0, 0, 0.038),
+    47.1px 11.2px 80.6px rgba(0, 0, 0, 0.044),
+    88.2px 20.9px 154.8px rgba(0, 0, 0, 0.051),
+    211px 50px 375px rgba(0, 0, 0, 0.07);
+    background-color: #424242e2;
+    margin:2rem;
+}
+
+.card img {
+    width: 100%;
+    height: 300px;
+    padding: 2rem;
+    object-fit: scale-down;
+    background-image: url("/assets/bg-body.png");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    transition: all 0.5s ease;
+    cursor: grab;
+}
+.card img:hover{
+    z-index: 10;
+    transform: scale3d(1.1, 1.1, 1.2);
+
+}
+
+.card-content {
+    padding-bottom: 16px;
+}
+
+.card-title {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+/*!Button Page*/
+
+.buttons{
+ justify-content: center;
+ gap: 4rem;
+}
+
+.btn-pag{
+    background: var(--second-color);
+    padding: 1rem;
+    border-radius: 20%;
+    color: #fff;
+}
+
+@media screen and (min-width: 760px) {
+    
+
+    .col-5 {
+        width: 41.66666666666667%;
+    }
+
+    header{
+        height: 6rem;  
+        padding: 1rem 0;
+    }
+
+    .down {
+        padding: 1rem;
+    }
+
+    .menu-desktop{
+        display: flex;
+        width: 100%;
+        position: fixed;
+        height: 4rem;
+        top: 6rem;
+        background: var(--third-color);
+        transform: translateY(-100px);
+        visibility: hidden;
+        gap: 4rem;
+        transition: all 0.8s ease-out;
+        z-index: 996;
+    }
+
+    .menu-desktop-active{
+        transform: translateY(0);
+        visibility: visible;
+    }
+
+    .menu-desktop .nav-link {
+        color: var(--links-color);
+    }
+
+    .menu-desktop .nav-link:hover {
+        color: #fff;
+        transform: scale(1.07);
+    }
+    main{
+        width: 80%;
+        margin: 0 auto;
+        margin-top: 4rem;
+    }
+
+    /**Enable**/
+    .cta-menu-mobile{
+        display: none;
+      }
+
+    .search-recipe{
+        display: none;
+    }
+
+    .panel-btn{
+        display: none;
+    }      
+    
+  }
+
+
+
