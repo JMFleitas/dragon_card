@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik+Glitch+Pop&display=swap');
 
 :root {
-    --main-color: rgb(12,5,216);
+    --main-color: rgb(12, 5, 216);
     --main-color-alpha: rgba(12, 5, 216, 0.87);
     --second-color: rgb(255, 130, 46);
     --third-color: rgb(46, 147, 255);
@@ -23,21 +23,23 @@ html {
     font-size: 10px;
 }
 
-body{
+body {
     font-size: calc(14px + (18 - 14) * ((100vw - 300px) / (1400 - 300)));
     text-align: center;
-   
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 /**My styles**/
 
-.d-flex{
+.d-flex {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.d-flex-column{
+.d-flex-column {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -117,7 +119,7 @@ body{
 
 /*!Header*/
 
-header{
+header {
     position: sticky;
     top: 0;
     height: 6rem;
@@ -126,34 +128,34 @@ header{
 }
 
 .img-brand {
-  filter: drop-shadow(1px 2px 1px rgba(0, 0, 0, 0.5));
+    filter: drop-shadow(1px 2px 1px rgba(0, 0, 0, 0.5));
 
 }
 
-.title{
+.title {
     font-family: var(--title-font);
     color: var(--second-color);
-    text-shadow: 2px 2px 4px #000 ;
+    text-shadow: 2px 2px 4px #000;
 }
 
-.menu-desktop{
+.menu-desktop {
     display: none;
 }
 
 /*!Menu mobile*/
 
-.cta-menu-mobile{
+.cta-menu-mobile {
     position: fixed;
-     bottom: 4vh;
-     right: 4vw;
-     z-index: 998;
-     border: none;
-     background: transparent;
+    bottom: 4vh;
+    right: 4vw;
+    z-index: 998;
+    border: none;
+    background: transparent;
 }
 
 .menu-mobile {
     position: fixed;
-    background:rgba(0, 0, 0, 0.756);
+    background: rgba(0, 0, 0, 0.756);
     width: 100%;
     height: 100%;
     top: 0;
@@ -166,77 +168,92 @@ header{
     z-index: 997;
 }
 
-.menu-active{
+.menu-active {
     opacity: 1;
     visibility: visible;
     transform: translateX(0);
 }
 
-.menu-inactive{
+.menu-inactive {
     opacity: 0;
     visibility: hidden;
     transform: translateX(-100);
 }
 
-.btn-img{
-  filter: drop-shadow(1px 1px 1px rgba(0, 0, 0, 0.5));
-  transition: transform 0.5s ease;
+.btn-img {
+    filter: drop-shadow(1px 1px 1px rgba(0, 0, 0, 0.5));
+    transition: transform 0.5s ease;
 
 }
-.rotate-img{
-    transform: rotate(-360deg); 
-}
-.rotate-img-reverse{
-    transform: rotate(360deg); 
+
+.rotate-img {
+    transform: rotate(-360deg);
 }
 
-.menu-mobile .nav-link{
+.rotate-img-reverse {
+    transform: rotate(360deg);
+}
+
+.menu-mobile .nav-link {
     font-size: xx-large;
     color: var(--links-color);
     transition: all 0.5s ease;
 }
 
-.menu-mobile .nav-link:hover{
+.menu-mobile .nav-link:hover {
     transform: scale(1.1);
     color: var(--second-color);
 }
 
 /*!Main*/
-main{
+main {
     margin-top: 4rem;
+    flex-grow: 1;
 }
-section{
+
+section {
     scroll-margin-top: 6rem;
     margin-top: 1rem;
 }
 
-.ipt-search{
+.ipt-search {
     padding: 0.5rem;
     border-radius: 15px;
-    border: 2px groove var(--main-color);
-}
-.btn-search{
-   background: transparent;
-   border: none;
+    border: 2px groove var(--third-color);
 }
 
-  /*!Cards category*/
+.ipt-search:focus {
+    border: 2px solid var(--third-color);
+    outline: none;
+}
 
-  .card {
+.ipt-search::placeholder {
+    color: var(--second-color);
+}
+
+.btn-search {
+    background: transparent;
+    border: none;
+}
+
+/*!Cards category*/
+
+.card {
     color: #fff;
-    width: 30rem;
     border: 1px solid #ddd;
     border-radius: 8px;
     overflow: hidden;
     box-shadow:
-    5.8px 1.4px 10.1px rgba(0, 0, 0, 0.018),
-    14px 3.3px 23.9px rgba(0, 0, 0, 0.03),
-    26.4px 6.3px 44.8px rgba(0, 0, 0, 0.038),
-    47.1px 11.2px 80.6px rgba(0, 0, 0, 0.044),
-    88.2px 20.9px 154.8px rgba(0, 0, 0, 0.051),
-    211px 50px 375px rgba(0, 0, 0, 0.07);
+        2.8px 2.8px 2.2px rgba(0, 0, 0, 0.02),
+        6.7px 6.7px 5.3px rgba(0, 0, 0, 0.028),
+        12.5px 12.5px 10px rgba(0, 0, 0, 0.035),
+        22.3px 22.3px 17.9px rgba(0, 0, 0, 0.042),
+        41.8px 41.8px 33.4px rgba(0, 0, 0, 0.05),
+        100px 100px 80px rgba(0, 0, 0, 0.07);
     background-color: #424242e2;
-    margin:2rem;
+    margin: 2rem;
+    cursor: default;
+    width: 30rem;
 }
 
 .card img {
@@ -249,9 +266,10 @@ section{
     background-repeat: no-repeat;
     background-size: contain;
     transition: all 0.5s ease;
-    cursor: grab;
+    cursor: pointer;
 }
-.card img:hover{
+
+.card img:hover {
     z-index: 10;
     transform: scale3d(1.1, 1.1, 1.2);
 
@@ -266,29 +284,56 @@ section{
     font-weight: bold;
     margin-bottom: 8px;
 }
+
 /*!Button Page*/
 
-.buttons{
- justify-content: center;
- gap: 4rem;
+.buttons {
+    justify-content: center;
+    gap: 4rem;
+    padding: 2rem auto;
 }
 
-.btn-pag{
+.buttons button {
+    display: inline-block;
+    margin: 1rem;
+    border: none;
+    transition: opacity 0.5s ease;
+}
+
+.buttons button:hover {
+    opacity: 0.7;
+}
+
+.btn-pag {
     background: var(--second-color);
     padding: 1rem;
     border-radius: 20%;
     color: #fff;
 }
 
+/*!Footer*/
+
+footer {
+    height: 6rem;
+    background: var(--third-color);
+    padding: 2rem;
+    color: #fff;
+}
+
+.my-page {
+    color: #79edff;
+    font-style: italic;
+}
+
 @media screen and (min-width: 760px) {
-    
+
 
     .col-5 {
         width: 41.66666666666667%;
     }
 
-    header{
-        height: 6rem;  
+    header {
+        height: 6rem;
         padding: 1rem 0;
     }
 
@@ -296,7 +341,7 @@ section{
         padding: 1rem;
     }
 
-    .menu-desktop{
+    .menu-desktop {
         display: flex;
         width: 100%;
         position: fixed;
@@ -310,7 +355,7 @@ section{
         z-index: 996;
     }
 
-    .menu-desktop-active{
+    .menu-desktop-active {
         transform: translateY(0);
         visibility: visible;
     }
@@ -323,26 +368,28 @@ section{
         color: #fff;
         transform: scale(1.07);
     }
-    main{
+
+    main {
         width: 80%;
         margin: 0 auto;
         margin-top: 4rem;
     }
 
-    /**Enable**/
-    .cta-menu-mobile{
-        display: none;
-      }
+    .ipt-search {
+        width: 35%;
+    }
 
-    .search-recipe{
+    /**Enable**/
+    .cta-menu-mobile {
         display: none;
     }
 
-    .panel-btn{
+    .search-recipe {
         display: none;
-    }      
-    
-  }
+    }
 
+    .panel-btn {
+        display: none;
+    }
 
-
+}

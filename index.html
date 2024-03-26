@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,15 +9,16 @@
     <link rel="stylesheet" href="style.css">
     <title>Dragon Card</title>
 </head>
+
 <body>
     <header class="d-flex-column">
         <div class=" brand d-flex">
-            <a class="d-flex" href="#">
-            <img class="img-brand" src="/assets/brand.png" alt="brand">
-            <h1 class="title">Dragon Card</h1>
+            <a class="d-flex" href="index.html">
+                <img class="img-brand" src="/assets/brand.png" alt="brand">
+                <h1 class="title">Dragon Card</h1>
             </a>
         </div>
-       
+
     </header>
     <nav class="menu-desktop d-flex">
         <a class="nav-link" href="#">Characters</a>
@@ -31,46 +33,47 @@
     </nav>
 
     <button class="cta-menu-mobile" type="button">
-       <img class="btn-img" src="/assets/button.png"  alt="button">
+        <img class="btn-img" src="/assets/button.png" alt="button">
     </button>
     <main>
-    
+
         <section>
             <div class="d-flex">
                 <input class="ipt-search" type="search" name="search" id="" placeholder="Search...">
                 <button class="btn-search" type="button">
-                <img src="/assets/find.png" alt="search-img">
+                    <img src="/assets/find.png" alt="search-img">
                 </button>
             </div>
         </section>
 
-    
+
         <section class="row d-flex" id="characters">
 
-               <template class="template-card d-flex">
-                    <div class="card col-1 col-5">
-                        <img src="assets/img_brand.png" alt="Imagen de ejemplo" loading="lazy">
-                        <div class="card-content">
-                           <em class="name"></em>
-                            <p class="affiliation"></p>
-                            <p class="ki"></p>
-                            <p class="max-ki"></p>
+            <template class="template-card d-flex">
+                <div class="card col-1 col-5">
+                    <img class="card-img" src="assets/img_brand.png" alt="Imagen de ejemplo" loading="lazy">
+                    <div class="card-content">
+                        <em class="name"></em>
+                        <p class="affiliation"></p>
+                        <p class="ki"></p>
+                        <p class="max-ki"></p>
 
-                        </div>
                     </div>
-               </template>
+                </div>
+            </template>
 
         </section>
-          <section>
-              <div class="d-flex buttons">
-                  <button class="previous btn-pag" >Prev</button>
-                  
-                  <button class="next btn-pag" >Next</button>
-              </div>
-          </section>
-    
-      
+        <section>
+            <div class="d-flex buttons">
+                <button class="previous btn-pag">Prev</button>
+
+                <button class="next btn-pag">Next</button>
+            </div>
+        </section>
     </main>
+    <footer class="d-flex">
+        <p>&copy; 2024 All rights reserved - Desarrollado por <a class="my-page" href="#">jona_fleiDev.com</a></p>
+    </footer>
     <script src="https://cdn.jsdelivr.net/npm/axios@1.6.7/dist/axios.min.js"></script>
     <script type="module" src="/src/script.js"></script>
 </body>
