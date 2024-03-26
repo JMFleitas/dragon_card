@@ -253,7 +253,8 @@ section {
     background-color: #424242e2;
     margin: 2rem;
     cursor: default;
-    width: 30rem;
+    width: clamp(60%, min(60%, 20rem), 20rem);
+
 }
 
 .card img {
