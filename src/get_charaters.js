@@ -1,4 +1,6 @@
 export default function getAllCharacters() {
+
+
     const $template = document.querySelector(".template-card").content,
         $btnPrev = document.querySelector(".previous"),
         $btnNext = document.querySelector(".next"),
