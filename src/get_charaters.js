@@ -5,7 +5,6 @@ export default function getAllCharacters() {
         $btnPrev = document.querySelector(".previous"),
         $btnNext = document.querySelector(".next"),
         $btnSearch = document.querySelector(".btn-search *"),
-        $cardImg = document.querySelector(".card"),
         $cardContainer = document.getElementById("characters"),
         $fragment = document.createDocumentFragment();
 
@@ -13,7 +12,7 @@ export default function getAllCharacters() {
         .then(function (response) {
             let data = response.data;
 
-            console.log(data.items[0]);
+            // console.log(data.items[0]);
 
             data.items.forEach(character => {
                 let $clone = document.importNode($template, true);
@@ -32,7 +31,7 @@ export default function getAllCharacters() {
         .catch((error) => {
             // Manejar el error
             let errorMessage = `Ocurrio un error ${error.response.status}`
-            $cardContainer.insertAdjacentHTML("afterend", `<h2>${errorMessage}</h2>`);
+            $cardContainer.insertAdjacentHTML("afterend", `<h2 style="color: #FFd"; >${errorMessage}</h2>`);
         })
 
 
@@ -44,23 +43,13 @@ export default function getAllCharacters() {
 
     const $soundPageBtn = document.createElement("audio");
     $soundPageBtn.src = "../assets/sound-btn-page.mp3";
-    const $soundBtnSearch = document.createElement("audio");
-    $soundBtnSearch.src = "../assets/search-btn.mp3";
+
     const $soundCard = document.createElement("audio");
     $soundCard.src = "../assets/sound-card.mp3";
 
 
 
     document.addEventListener("click", e => {
-
-        if (e.target == $btnSearch) {
-            $soundBtnSearch.play();
-        }
-
-        if (e.target == $cardImg) {
-            alert("h")
-            $soundCard.play();
-        }
 
         if (e.target == $btnPrev) {
 
@@ -130,5 +119,17 @@ export default function getAllCharacters() {
                 })
 
         }
+
+
+        //todo sonidos de botones y acciones
+
+
+        const arrSounCard = $cardContainer.querySelectorAll(".card-img ");
+        arrSounCard.forEach(img => {
+            if (e.target == img) {
+                $soundCard.play();
+            }
+        })
     })
+
 }

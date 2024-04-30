@@ -38,37 +38,48 @@
     <main>
 
         <section>
-            <div class="d-flex">
-                <input class="ipt-search" type="search" name="search" id="" placeholder="Search...">
-                <button class="btn-search" type="button">
+            <form class="d-flex form">
+                <input class="ipt-search" type="search" name="search" id="" placeholder="Ej Goku" autocomplete="off">
+                <button class="btn-search" type="submit">
                     <img src="/assets/find.png" alt="search-img">
                 </button>
-            </div>
+            </form>
         </section>
 
 
         <section class="row d-flex" id="characters">
 
-            <template class="template-card d-flex">
-                <div class="card col-1 col-5">
-                    <img class="card-img" src="assets/img_brand.png" alt="Imagen de ejemplo" loading="lazy">
-                    <div class="card-content">
-                        <em class="name"></em>
-                        <p class="affiliation"></p>
-                        <p class="ki"></p>
-                        <p class="max-ki"></p>
-
-                    </div>
-                </div>
-            </template>
-
         </section>
-        <section>
-            <div class="d-flex buttons">
-                <button class="previous btn-pag">Prev</button>
 
-                <button class="next btn-pag">Next</button>
+        <template class="template-card d-flex">
+            <div class="card col-1 col-5">
+                <img class="card-img" src="assets/img_brand.png" alt="Imagen de ejemplo" loading="lazy">
+                <div class="card-content">
+                    <em class="name"></em>
+                    <p class="affiliation"></p>
+                    <p class="ki"></p>
+                    <p class="max-ki"></p>
+
+                </div>
             </div>
+        </template>
+
+        <template class="template-info d-flex">
+            <div class="card col-1 col-5">
+                <img class="info-img" src="" alt="Imagen de ejemplo" loading="lazy">
+                <div class="card-content">
+                    <em class="name"></em>
+                    <p class="description"></p>
+                </div>
+            </div>
+        </template>
+
+
+        <div class="d-flex buttons">
+            <button class="previous btn-pag">Prev</button>
+
+            <button class="next btn-pag">Next</button>
+        </div>
         </section>
     </main>
     <footer class="d-flex">
