@@ -29,6 +29,12 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    background-image: url("assets/bg-body.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+
 }
 
 /**My styles**/
@@ -211,13 +217,20 @@ main {
     flex-grow: 1;
 }
 
+.go-back {
+    background-color: var(--main-color);
+    color: #fff;
+    margin: 4rem auto;
+    font-size: 2rem;
+}
+
 section {
     scroll-margin-top: 6rem;
     margin-top: 1rem;
 }
 
 .ipt-search {
-    padding: 0.5rem;
+    padding: 0.7rem;
     border-radius: 15px;
     border: 2px groove var(--third-color);
 }
@@ -240,21 +253,20 @@ section {
 
 .card {
     color: #fff;
-    border: 1px solid #ddd;
+    /* border: 1px solid #ddd; */
     border-radius: 8px;
     overflow: hidden;
     box-shadow:
-        2.8px 2.8px 2.2px rgba(0, 0, 0, 0.02),
-        6.7px 6.7px 5.3px rgba(0, 0, 0, 0.028),
-        12.5px 12.5px 10px rgba(0, 0, 0, 0.035),
-        22.3px 22.3px 17.9px rgba(0, 0, 0, 0.042),
-        41.8px 41.8px 33.4px rgba(0, 0, 0, 0.05),
-        100px 100px 80px rgba(0, 0, 0, 0.07);
-    background-color: #424242e2;
+        0.1px 2.8px 2.3px rgba(0, 0, 0, 0.033),
+        0.3px 6.7px 5.5px rgba(0, 0, 0, 0.04),
+        0.5px 12.5px 10.4px rgba(0, 0, 0, 0.046),
+        0.9px 22.3px 18.5px rgba(0, 0, 0, 0.053),
+        1.7px 41.8px 34.7px rgba(0, 0, 0, 0.061),
+        4px 100px 83px rgba(0, 0, 0, 0.07);
+    background-color: rgba(10, 11, 11, 0.754);
     margin: 2rem;
     cursor: default;
     width: clamp(60%, min(60%, 20rem), 20rem);
-
 }
 
 .card img {
@@ -262,7 +274,7 @@ section {
     height: 300px;
     padding: 2rem;
     object-fit: scale-down;
-    background-image: url("/assets/bg-body.png");
+    background-image: url("/assets/bg-card.png");
     background-position: center center;
     background-repeat: no-repeat;
     background-size: contain;
@@ -278,6 +290,7 @@ section {
 
 .card-content {
     padding-bottom: 16px;
+
 }
 
 .card-title {
@@ -302,7 +315,7 @@ section {
 }
 
 .buttons button:hover {
-    opacity: 0.7;
+    opacity: 0.8;
 }
 
 .btn-pag {
@@ -333,9 +346,19 @@ footer {
         width: 41.66666666666667%;
     }
 
+
+
+    /**Generals styles*/
+
     header {
         height: 6rem;
         padding: 1rem 0;
+    }
+
+    header,
+    footer {
+        background: var(--third-color);
+
     }
 
     .down {
